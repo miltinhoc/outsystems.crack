@@ -1,6 +1,6 @@
 # outsystems password cracker
 
-![image](https://github.com/miltinhoc/outsystems.crack/assets/26238419/2a4f5661-d567-46d6-bdf2-c68ae868f0ee)
+![image](https://github.com/miltinhoc/outsystems.crack/assets/26238419/23ced8df-c05d-4590-a790-7af06dcf41af)
 
 ## Building and Running
 
