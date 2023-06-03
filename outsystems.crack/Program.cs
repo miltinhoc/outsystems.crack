@@ -17,7 +17,7 @@ namespace outsystems.crack
 
             if (!processor.ParseArguments(args))
             {
-                Logger.Print($"\n[*] Invalid arguments.", LogType.ERROR);
+                
                 return;
             }
 

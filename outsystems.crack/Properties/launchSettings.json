@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "outsystems.crack": {
+      "commandName": "Project",
+      "commandLineArgs": "-u brozao -p xato-net-10-million-passwords.txt -h $1$ggxnY98rX19R1oGIt+EwozWjMbTQeZ+8/THMU0srofA=E5B9C9C90F9FCF6167F6AF00547B3F32017DDE64BC6BB6750204542561CD259425F88E536263DECBF7B78F1F766255A3677E247859C9486BDD93A108634C8371"
+    }
+  }
+}

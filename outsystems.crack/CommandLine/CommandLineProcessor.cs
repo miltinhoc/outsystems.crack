@@ -1,10 +1,12 @@
-﻿namespace outsystems.crack.CommandLine
+﻿using outsystems.crack.Logging;
+
+namespace outsystems.crack.CommandLine
 {
     public class CommandLineProcessor
     {
         public static readonly string UsernameArgument = "-u";
         public static readonly string PaswordListArgument = "-p";
-        public static readonly string HashArgument = "-h"; 
+        public static readonly string HashArgument = "-H"; 
 
         public Dictionary<string, string> ArgumentList { get; private set; }
 
@@ -12,6 +14,12 @@
 
         public bool ParseArguments(string[] args)
         {
+            if (args.Length == 1 && (args[0] == "-h"))
+            {
+                ShowHelp();
+                return false;
+            }
+
             for (int i = 0; i < args.Length; i++)
             {
                 // If this argument starts with "-"
@@ -32,11 +40,31 @@
             return AreAllArgumentsPresent();
         }
 
+        private static void ShowHelp()
+        {
+            string c = @"Usage: outsystems.crack [-options]
+
+options:
+	-u <username>		outsystems account username
+	-p <wordlist>		path to your wordlist
+	-H <hash>	        outsystems account password hash 
+	-h			show this help message and exit";
+
+            Console.WriteLine(c);
+        }
+
         private bool AreAllArgumentsPresent()
         {
-            return (ArgumentList.ContainsKey(UsernameArgument)
-                && ArgumentList.ContainsKey(PaswordListArgument)
-                && ArgumentList.ContainsKey(HashArgument));
+            if (
+                !ArgumentList.ContainsKey(UsernameArgument) ||
+                !ArgumentList.ContainsKey(PaswordListArgument) ||
+                !ArgumentList.ContainsKey(HashArgument))
+            {
+                Logger.Print($"[*] Invalid arguments.", LogType.ERROR);
+                return false;
+            }
+
+            return true;
         }
 
         public string GetValueFromKey(string key)
