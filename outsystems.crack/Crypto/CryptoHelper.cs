@@ -87,7 +87,7 @@ namespace outsystems.crack.Crypto
                 }
 
                 string countDiff = (_count - _lastCount).ToString("N0", CultureInfo.InvariantCulture);
-                Logger.Print($" [*] trying password '{_currentPassword}'... | {countDiff} tries/s", LogType.INFO);
+                Logger.Print($"[*] trying password '{_currentPassword}'... | {countDiff} tries/s", LogType.INFO);
 
                 _lastCount = _count;
             }
