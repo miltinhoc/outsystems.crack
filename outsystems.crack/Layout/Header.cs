@@ -2,12 +2,18 @@
 
 namespace outsystems.crack.Layout
 {
+    /// <summary>
+    /// Class responsible for displaying a custom header with a logo and version information.
+    /// </summary>
     public class Header
     {
         private static readonly Dictionary<string, ConsoleColor> logo = new();
         private static bool isInit;
         private static readonly ConsoleColor color = ConsoleColor.DarkRed;
 
+        /// <summary>
+        /// Initializes the header with the logo and version information.
+        /// </summary>
         public static void Init()
         {
             isInit = true;
@@ -25,6 +31,9 @@ namespace outsystems.crack.Layout
             logo.Add($" [miltinh0c] (v{Assembly.GetExecutingAssembly().GetName().Version})\n", ConsoleColor.White);
         }
 
+        /// <summary>
+        /// Draws the header with the logo and version information.
+        /// </summary>
         public static void Draw()
         {
             if (!isInit)

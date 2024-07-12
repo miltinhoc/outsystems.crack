@@ -6,10 +6,18 @@ using outsystems.crack.Logging;
 
 namespace outsystems.crack
 {
+    /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
     public static class Program
     {
         private static CryptoHelper _cryptoHelper;
 
+        /// <summary>
+        /// The main entry point for the password cracking application. 
+        /// Parses command-line arguments, initiates the password cracking process, and handles user cancellation.
+        /// </summary>
+        /// <param name="args">Command-line arguments passed to the application.</param>
         public static void Main(string[] args)
         {
             Console.CancelKeyPress += Console_CancelKeyPress;
@@ -53,6 +61,11 @@ namespace outsystems.crack
             }
         }
 
+        /// <summary>
+        /// Handles the console cancel key press event to stop the password cracking process.
+        /// </summary>
+        /// <param name="sender">The event sender.</param>
+        /// <param name="e">The event arguments.</param>
         private static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
         {
             _cryptoHelper.Stop();
