@@ -7,10 +7,24 @@ namespace outsystems.crack.CommandLine
     /// </summary>
     public class CommandLineProcessor
     {
+        /// <summary>
+        /// Command-line argument flag for specifying the username.
+        /// </summary>
         public static readonly string UsernameArgument = "-u";
-        public static readonly string PaswordListArgument = "-p";
-        public static readonly string HashArgument = "-H"; 
 
+        /// <summary>
+        /// Command-line argument flag for specifying the path to the wordlist.
+        /// </summary>
+        public static readonly string PaswordListArgument = "-p";
+
+        /// <summary>
+        /// Command-line argument flag for specifying the hash of the password.
+        /// </summary>
+        public static readonly string HashArgument = "-H";
+
+        /// <summary>
+        /// Gets or Sets the dictionary containing parsed command-line arguments.
+        /// </summary>
         public Dictionary<string, string> ArgumentList { get; private set; }
 
         /// <summary>

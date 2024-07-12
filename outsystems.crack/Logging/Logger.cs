@@ -61,9 +61,24 @@ namespace outsystems.crack.Logging
     /// </summary>
     public enum LogType
     {
+        /// <summary>
+        /// Informational message.
+        /// </summary>
         INFO,
+
+        /// <summary>
+        /// Warning message.
+        /// </summary>
         WARN,
+
+        /// <summary>
+        /// Error message.
+        /// </summary>
         ERROR,
+
+        /// <summary>
+        /// Fatal error message.
+        /// </summary>
         FATAL
     }
 }

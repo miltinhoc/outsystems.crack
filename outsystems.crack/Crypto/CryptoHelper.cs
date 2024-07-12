@@ -26,8 +26,11 @@ namespace outsystems.crack.Crypto
         private static bool _firstRun = true;
         private static string _password;
 
+        /// <summary>
+        /// Gets the password found during the cracking process, or null if no password was found.
+        /// </summary>
         public static string Password => _password;
-        public static int Count => _count;
+        //public static int Count => _count;
 
         /// <summary>
         /// Starts the password cracking process.
@@ -190,8 +193,19 @@ namespace outsystems.crack.Crypto
     /// </summary>
     public enum Status
     {
+        /// <summary>
+        /// Password found during the cracking process.
+        /// </summary>
         FOUND,
+
+        /// <summary>
+        /// Password not found during the cracking process.
+        /// </summary>
         NOT_FOUND,
+
+        /// <summary>
+        /// Password cracking process was cancelled.
+        /// </summary>
         CANCELLED
     }
 }
